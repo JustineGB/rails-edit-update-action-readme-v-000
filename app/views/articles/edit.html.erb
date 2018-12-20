@@ -2,10 +2,10 @@
 
 <%= form_for @article do |article| %>
   <%= article.label 'Article Title' %><br>
-  <%= article.Description 'Article Description' %><br>
+  <%= article.text_field :title %><br>
 
   <%= article.Description 'Article Description' %><br>
-  <%= article.Description 'Article Description' %><br>
+  <%= article.text_area :description %><br>
 
   <%= article.submit "Submit Article" %>
 <% end %>
