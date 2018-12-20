@@ -1841,3 +1841,21 @@ Started GET "/articles/1/edit" for 127.0.0.1 at 2018-12-20 20:01:27 +0000
 Processing by ArticlesController#edit as HTML
   Parameters: {"id"=>"1"}
   [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered articles/edit.html.erb within layouts/application (69.5ms)
+Completed 200 OK in 506ms (Views: 471.1ms | ActiveRecord: 0.2ms)
+Started PATCH "/articles/1" for 127.0.0.1 at 2018-12-20 20:01:28 +0000
+Processing by ArticlesController#update as HTML
+  Parameters: {"utf8"=>"✓", "article"=>{"title"=>"My edit", "description"=>"My article description"}, "commit"=>"Submit Article", "id"=>"1"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "articles" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "articles"."id" = ?  [["title", "My edit"], ["description", "My article description"], ["updated_at", "2018-12-20 20:01:28.219759"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/articles/1
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+Started GET "/articles/1" for 127.0.0.1 at 2018-12-20 20:01:28 +0000
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered articles/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
