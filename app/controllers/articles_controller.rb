@@ -24,10 +24,12 @@ class ArticlesController < ApplicationController
   end 
   
   def update
-      #raise params.inspect
-    #@article = Article.find(params[:id])
-    #@article.update(title: params[:title], description: params[:description])
-    #redirect_to article_path(@article)
+    @article = Article.find(params[:id])
+    @article.update(title: params[:title], description: params[:description])
+    raise params.inspect
+    redirect_to article_path(@article)
+          #raise params.inspect
+
   end
   
 end
