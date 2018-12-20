@@ -28,8 +28,6 @@ class ArticlesController < ApplicationController
     @article.update(title: params[:title], description: params[:description])
     raise params.inspect
     redirect_to article_path(@article)
-          #raise params.inspect
-
   end
   
 end
