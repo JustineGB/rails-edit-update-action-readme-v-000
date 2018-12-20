@@ -1,8 +1,7 @@
 <h1>Edit Form </h1>
 
-<%= form_tag articles_path do %>
-  <label>Article title:</label><br>
-  <%= text_field_tag :title %><br>
+<%= form_for @article do |f| %>
+    <%= f.label 'Article Title' %><br>
 
   <label>Article Description</label><br>
   <%= text_area_tag :description %><br>
